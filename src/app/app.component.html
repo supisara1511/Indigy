@@ -1,0 +1,21 @@
+<nz-layout>
+  <nz-header theme="light">
+    <ul
+      nz-menu
+      nzMode="horizontal"
+      nzTheme="dark">
+      <li
+        *ngFor="let menu of menus"
+        nz-menu-item
+        routerLink="{{ menu.key }}">
+        <span
+          nz-icon
+          nzType="{{ menu.icon }}"></span>
+        {{ menu.label }}
+      </li>
+    </ul>
+  </nz-header>
+  <nz-content>
+    <router-outlet />
+  </nz-content>
+</nz-layout>

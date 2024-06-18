@@ -1,0 +1,84 @@
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzTitle]="title"
+  [nzFooter]="modalFooter"
+  (nzOnCancel)="handleCancel()">
+  <ng-container *nzModalContent>
+    <form
+      nz-form
+      [formGroup]="form"
+      (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label
+          [nzSpan]="6"
+          nzFor="{{ labels.name.name }}"
+          nzRequired>
+          {{ labels.name.label }}
+        </nz-form-label>
+        <nz-form-control
+          [nzSpan]="14"
+          nzErrorTip="{{ labels.name.errors.require }}">
+          <input
+            nz-input
+            formControlName="{{ labels.name.name }}"
+            type="text" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label
+          [nzSpan]="6"
+          nzFor="{{ labels.mobileNumber.name }}"
+          nzRequired>
+          {{ labels.mobileNumber.label }}
+        </nz-form-label>
+        <nz-form-control
+          [nzSpan]="14"
+          nzErrorTip="{{ labels.mobileNumber.errors.require }}">
+          <input
+            nz-input
+            formControlName="{{ labels.mobileNumber.name }}"
+            type="tel" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label
+          [nzSpan]="6"
+          nzFor="{{ labels.position.name }}"
+          nzRequired>
+          {{ labels.position.label }}
+        </nz-form-label>
+        <nz-form-control
+          [nzSpan]="14"
+          nzErrorTip="{{ labels.position.errors.require }}"
+          nzRequired>
+          <nz-select
+            nzShowSearch
+            nzAllowClear
+            formControlName="{{ labels.position.name }}"
+            nzPlaceHolder="Select a person">
+            <nz-option
+              *ngFor="let position of labels.position.options"
+              nzLabel="{{ position.value }}"
+              nzValue="{{ position.value }}" />
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>
+
+<ng-template #modalFooter>
+  <button
+    nz-button
+    nzType="primary"
+    (click)="submitForm()">
+    บันทึก
+  </button>
+  <button
+    nz-button
+    (click)="handleCancel()">
+    ปิด
+  </button>
+</ng-template>
