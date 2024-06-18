@@ -1,0 +1,88 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# compiled output
+dist/
+tmp/
+out-tsc/
+build/
+
+# dependencies
+node_modules/
+bower_components/
+
+# IDEs and editors
+.idea/
+.vscode/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# IDE - VS Code
+.vscode/*
+
+# IDE - WebStorm
+.idea/*
+
+# IDE - Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# misc
+.DS_Store
+Thumbs.db
+*.iml
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# angular build specific
+.angular/
+.angular/cache/
+
+# npm/yarn specific
+package-lock.json
+yarn.lock
+
+# local environment configuration
+src/environments/environment.local.ts
+src/environments/environment.prod.ts
+src/environments/environment.staging.ts
+src/environments/environment.test.ts
+
+# Angular Build artifacts
+dist/
+tmp/
+.out-tsc/
+
+# Compiled JavaScript files
+*.js
+*.js.map
+
+# Compiled TypeScript files
+*.tsbuildinfo
+
+# Output from npm pack
+*.tgz
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# IntelliJ
+*.iws
+.idea/
+*.iml
+*.ipr
+
+# End of `.gitignore`
