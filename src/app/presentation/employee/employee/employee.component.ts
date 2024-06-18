@@ -1,12 +1,12 @@
-import { Component, ViewChild } from "@angular/core";
-import { EmployeeService } from "../../../services/employee.service";
-import { CreateEditEmployeeComponent } from "../create-edit-employee/create-edit-employee.component";
-import { Employee } from "./employee.interface";
+import { Component, ViewChild } from '@angular/core';
+import { EmployeeService } from '../../../services/employee.service';
+import { CreateEditEmployeeComponent } from '../create-edit-employee/create-edit-employee.component';
+import { Employee } from './employee.interface';
 
 @Component({
-  selector: "app-employee",
-  templateUrl: "./employee.component.html",
-  styleUrls: ["./employee.component.css"],
+  selector: 'app-employee',
+  templateUrl: './employee.component.html',
+  styleUrls: ['./employee.component.scss'],
 })
 export class EmployeeComponent {
   @ViewChild(CreateEditEmployeeComponent, { static: false })
@@ -14,11 +14,11 @@ export class EmployeeComponent {
 
   public employees: Employee[] = [];
   public columns: { key: keyof Employee; title: string; type: string }[] = [
-    { key: "id", title: "รหัสพนักงาน", type: "string" },
-    { key: "name", title: "ชื่อพนักงาน", type: "string" },
-    { key: "position", title: "ตำแหน่ง", type: "string" },
-    { key: "mobileNumber", title: "เบอร์โทรศัพท์", type: "mobile" },
-    { key: "id", title: "ตัวเลือก", type: "action" },
+    { key: 'id', title: 'รหัสพนักงาน', type: 'string' },
+    { key: 'name', title: 'ชื่อพนักงาน', type: 'string' },
+    { key: 'position', title: 'ตำแหน่ง', type: 'string' },
+    { key: 'mobileNumber', title: 'เบอร์โทรศัพท์', type: 'mobile' },
+    { key: 'id', title: 'ตัวเลือก', type: 'action' },
   ];
 
   constructor(private employeeService: EmployeeService) {

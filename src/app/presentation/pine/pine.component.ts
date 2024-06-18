@@ -1,25 +1,24 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-pine",
-  templateUrl: "./pine.component.html",
-  styleUrl: "./pine.component.scss",
+  selector: 'app-pine',
+  templateUrl: './pine.component.html',
+  styleUrls: ['./pine.component.scss'],
 })
 export class PineComponent {
   public count: number = 9;
-  public arrays: string = "";
+  public arrays: string = '';
   constructor() {
-    console.log("asdas");
+    this.arrays = this.handleCountChange();
   }
 
   handleCountChange() {
-    let lines = "";
+    let lines = '';
     for (let row = 1; row <= this.count; row++) {
-      const spaces = " ".repeat(this.count - row);
-      const numbers = Array(row).fill(row).join("-");
+      const spaces = ' '.repeat(this.count - row);
+      const numbers = Array(row).fill(row).join('-');
       lines += `${spaces}${numbers}${spaces}\n`;
     }
-
-    this.arrays = lines;
+    return lines;
   }
 }

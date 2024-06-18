@@ -1,26 +1,13 @@
-<div
-  nz-flex
-  [nzVertical]="true"
-  nzGap="small">
-  <div
-    nz-flex
-    nzJustify="space-between"
-    [nzVertical]="false">
+<div class="employee-page">
+  <div nz-row nzJustify="space-between" nzAlign="top">
     <h1 nz-typography>รายชื่อพนักงาน</h1>
     <div>
-      <button
-        nz-button
-        nzType="primary"
-        (click)="onCreate()">
-        เพิ่ม
-      </button>
+      <button nz-button nzType="primary" (click)="onCreate()">เพิ่ม</button>
     </div>
   </div>
 
   <div>
-    <nz-table
-      #basicTable
-      [nzData]="employees">
+    <nz-table #basicTable [nzData]="employees">
       <thead>
         <tr>
           <th *ngFor="let column of columns">{{ column.title }}</th>
@@ -34,25 +21,27 @@
                 {{ data[column.key] | mobile }}
               </ng-template>
               <ng-template [ngSwitchCase]="'action'">
-                <div
-                  nz-flex
-                  nzGap="small">
+                <nz-space [nzSize]="8">
                   <button
+                    *nzSpaceItem
                     nz-button
                     nzType="primary"
-                    (click)="onEdit(data)">
+                    (click)="onEdit(data)"
+                  >
                     แก้ไข
                   </button>
                   <button
+                    *nzSpaceItem
                     nz-button
                     nzType="primary"
                     nzDanger
                     nz-popconfirm
                     nzPopconfirmTitle="ลบข้อมูลพนักงาน"
-                    (nzOnConfirm)="onDelete(data)">
+                    (nzOnConfirm)="onDelete(data)"
+                  >
                     ลบ
                   </button>
-                </div>
+                </nz-space>
               </ng-template>
               <ng-template ngSwitchDefault>
                 {{ data[column.key] }}
@@ -65,5 +54,6 @@
   </div>
 
   <app-create-edit-employee
-    (formSubmit)="handleSubmitForm($event)"></app-create-edit-employee>
+    (formSubmit)="handleSubmitForm($event)"
+  ></app-create-edit-employee>
 </div>

@@ -1,7 +1,4 @@
-nz-content {
+.layout-content {
+  min-height: calc(100vh - 64px);
   padding: 50px;
-}
-
-nz-layout {
-  min-height: 100vh;
 }
